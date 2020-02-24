@@ -42,7 +42,7 @@ router.post('/', ensureAuthenticated, (req, res) => {
     }
 
     if (!req.body.details) {
-        errors.push({ text: 'Please add some details' });
+        errors.push({ text: 'Please add some Details' });
     }
 
     if (errors.length > 0) {
@@ -61,7 +61,7 @@ router.post('/', ensureAuthenticated, (req, res) => {
         new Idea(newUser)
             .save()
             .then(idea => {
-                req.flash('success_msg', 'Idea added successfuly');
+                req.flash('success_msg', 'Idea added successfully');
                 res.redirect('/ideas');
             });
     }
